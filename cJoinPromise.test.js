@@ -1,13 +1,12 @@
 const fs = require('fs');
 const expect = require('chai').expect;
-const joiner = require('./bJoinCallback');
+const joiner = require('./cJoinPromise');
 
 describe('joiner', () => {
-    it('should join files and callback', (done) => {
+    it('should Promise to join files', () => {
         const expected = JSON.parse(fs.readFileSync('expected.json'));
-        joiner((actual) => {
+        return joiner().then((actual) => {
             expect(expected).to.deep.equal(actual);
-            done();
-        });
+        })
     })
 })
