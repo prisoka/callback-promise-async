@@ -1,0 +1,32 @@
+[
+  {
+    "book": "Pride and Prejudice",
+    "name": "Brent",
+    "rating": 5,
+    "review": "Great stuff!"
+  },
+  {
+    "book": "Pride and Prejudice",
+    "name": "Jerimy",
+    "rating": 0,
+    "review": "Long and boring"
+  },
+  {
+    "book": "To Kill a Mockingbird",
+    "name": "Alan",
+    "rating": 3,
+    "review": "I like the big print!"
+  },
+  {
+    "book": "War and Peace",
+    "name": "Rachel",
+    "rating": 1,
+    "review": "My teacher made me read this :("
+  },
+  {
+    "book": "Johnny Tremain",
+    "name": "Jerimy",
+    "rating": 4,
+    "review": "I read good"
+  }
+]
