@@ -2,8 +2,8 @@ const fs = require('fs');
 const { promisify } = require('util');
 const readFileAsync = promisify(fs.readFile);
 
-let users, books, reviews;
 const joiner = () => {
+    let users, books, reviews;
     return readFileAsync('users.json')
         .then((userString) => {
             users = JSON.parse(userString);
