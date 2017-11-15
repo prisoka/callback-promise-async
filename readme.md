@@ -17,7 +17,3 @@
 1. Get tests to pass with Promises
 1. Get tests to pass with async/await
 1. Push your work!
-
-## TODO
-
-Tests for callbacks, Promises, async/await
