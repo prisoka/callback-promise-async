@@ -13,7 +13,7 @@
 1. Run `yarn install`
 1. Run `yarn test`
 1. Observe the working syncronous solution tests
-1. Get tests to pass with callbacks
-1. Get tests to pass with Promises
-1. Get tests to pass with async/await
+1. Get test to pass with callbacks
+1. Get test to pass with Promises
+1. Get test to pass with async/await
 1. Push your work!
