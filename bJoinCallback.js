@@ -20,19 +20,18 @@ const joiner = (cb) => {
 
         for(let review of reviews) {
           for(let book of books) {
-            if(book.id !== review.bookId) {
-                continue;
-            }
             for(let user of users) {
-              if(user.id !== review.userId) {
-                  continue;
+              if(user.id !== review.userId || book.id !== review.bookId) {
+                continue;
               }
+
               let joined = {
-                  "name": user.firstName,
-                  "book": book.title,
-                  "rating": review.stars,
-                  "review": review.text
+                "name": user.firstName,
+                "book": book.title,
+                "rating": review.stars,
+                "review": review.text
               }
+
               output.push(joined);
             }
           }
