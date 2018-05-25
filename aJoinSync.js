@@ -4,7 +4,10 @@ const joiner = () => {
     const users = JSON.parse(fs.readFileSync('users.json'));
     const books = JSON.parse(fs.readFileSync('books.json'));
     const reviews = JSON.parse(fs.readFileSync('reviews.json'));
-    const output = [];
+    // console.log('these are all USERS info >', users)
+    // console.log('these are all BOOKS info >>', books)
+    // console.log('these are all REVIEWS info >>>', reviews)
+    let output = [];
 
     for(let review of reviews) {
         for(let book of books) {
@@ -15,7 +18,7 @@ const joiner = () => {
                 if(user.id !== review.userId) {
                     continue;
                 }
-                const joined = {
+                let joined = {
                     "name": user.firstName,
                     "book": book.title,
                     "rating": review.stars,
