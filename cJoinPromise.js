@@ -13,7 +13,7 @@ const joiner = () => {
         if(err) {
           reject("FAILURE")
         }
-        const users = JSON.parse(data);
+        const users = await JSON.parse(data);
         resolve(users)
       })
     })
@@ -23,7 +23,7 @@ const joiner = () => {
         if(err) {
           reject("FAILURE")
         }
-        const books = JSON.parse(data);
+        const books = await JSON.parse(data);
         resolve(books)
       })
     })
@@ -33,33 +33,30 @@ const joiner = () => {
         if(err) {
           reject("FAILURE")
         }
-        // console.log(users)
-        // console.log(books)
-        const reviews = JSON.parse(data);
+        const reviews = await JSON.parse(data);
         resolve(reviews)
       })
     })
 
-    return Promise.all([userPromise, bookPromise, reviewPromise]).then(function([users, books, reviews]) {
-       let output = [];
-
-       for(let review of reviews) {
-         for(let book of books) {
-           for(let user of users) {
-             if(user.id !== review.userId || book.id !== review.bookId) {
-                continue;
-             }
-             let joined = {
-               "name": user.firstName,
-               "book": book.title,
-               "rating": review.stars,
-               "review": review.text
-             }
-             output.push(joined);
-           }
+  return await Promise.all([userPromise, bookPromise, reviewPromise]).then(function([users, books, reviews]) {
+    let output = [];
+    for(let review of reviews) {
+      for(let book of books) {
+        for(let user of users) {
+          if(user.id !== review.userId || book.id !== review.bookId) {
+            continue;
+          }
+        let joined = {
+         "name": user.firstName,
+         "book": book.title,
+         "rating": review.stars,
+         "review": review.text
          }
+         output.push(joined);
        }
-       return output;
+     }
+   }
+   return output;
    });
 }
 
